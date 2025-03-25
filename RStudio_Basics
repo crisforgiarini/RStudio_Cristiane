@@ -5,3 +5,6 @@ data$KINGDOM<-droplevels(data$KINGDOM)
 
 # Check that there are no duplicate KINGDOM
 any(duplicated(data$KINGDOM))
+
+## Rename columns
+data_genussep <- setNames(data_genussep, c("Genus", "species"))
