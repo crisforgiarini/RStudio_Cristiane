@@ -8,3 +8,7 @@ any(duplicated(data$KINGDOM))
 
 ## Rename columns
 data_genussep <- setNames(data_genussep, c("Genus", "species"))
+
+####Subset the data frame to exclude these rows.
+data1 <- data[!grepl("_sp._", data$SPECIES), ]
+data1$SPECIES<-droplevels(data1$SPECIES)
