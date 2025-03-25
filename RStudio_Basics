@@ -2,3 +2,6 @@
 #check levels and drop levels if necessary
 check<- unique(data$KINGDOM ) # to see result
 data$KINGDOM<-droplevels(data$KINGDOM)
+
+# Check that there are no duplicate KINGDOM
+any(duplicated(data$KINGDOM))
