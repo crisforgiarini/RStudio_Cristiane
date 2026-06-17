@@ -16,6 +16,12 @@ datagem <- datagem %>% select(-Dose_25)
 # Remove multiple columns
 datagem  <- datagem %>% select(-c(Habitat, Dose_25))
 
+library(dplyr)
+# Remove Duplicates Based on Specific Column(s)
+df_distinct <- data %>% distinct(Taxon, .keep_all = TRUE)
+print(df_distinct)
+write.csv(as.data.frame(df_distinct), file="distinct_records.csv")
+
 #removing specific columns with NA to use the data in a GLM model
 datagem 1 <- subset(datagem, !is.na(Dose_0))
 
